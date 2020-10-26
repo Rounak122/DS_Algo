@@ -23,7 +23,9 @@ public class tree {
 		preOrder(root);
 		System.out.println();
 		postOrder(root);
-
+		System.out.println();
+		levelOrder(root);
+		
 	}
 	
 	
@@ -78,6 +80,30 @@ public class tree {
 		postOrder(node.left);
 		postOrder(node.right);
 		System.out.print(node.data + " ");
+		
+	}
+	
+	static void levelOrder(Node node) {
+		
+		Queue<Node> queue = new LinkedList<Node>();
+		
+		queue.add(node);
+		
+		while(!queue.isEmpty()) {
+			
+			Node temp = queue.remove();
+			System.out.println(temp.data);
+			
+			if(temp.left!=null)
+			queue.add(temp.left);
+			
+			if(temp.right!=null)
+			queue.add(temp.right);
+
+			
+		}
+		
+		
 		
 	}
 	
