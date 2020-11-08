@@ -22,8 +22,8 @@ public class TreeVerticalTraversal {
 		map = new TreeMap<>();
 		queue = new LinkedList<Node>();
 		
-//		verticalOrder(root,0);
-		verticalLevelOrder(root,0);
+		verticalOrder(root,0);
+//		verticalLevelOrder(root,0);
 		
 		for (Collection<Integer> collection: map.values()) {
 			System.out.println(collection);
@@ -37,6 +37,7 @@ public class TreeVerticalTraversal {
 		
 		if(!map.containsKey(i))
 			map.put(i,new ArrayList<Integer>());
+		
 		map.get(i).add(node.data);
 		
 		verticalOrder(node.left, i-1);
@@ -44,31 +45,31 @@ public class TreeVerticalTraversal {
 		
 	}
 	
-	static void verticalLevelOrder(Node node, int i) {
+//	static void verticalLevelOrder(Node node, int i) {
+//		
+//		if (node==null)
+//			return;
+//		
+//		queue.add(node);
+//		
+//		while(!queue.isEmpty()) {
+//			
+//			Node temp = queue.remove();
+//			
+//			//TODO do something with the node
+//			
+//			if (!map.containsKey(i))
+//				map.put(i, new ArrayList<Integer>());
+//			map.get(i).add(temp.data);
+//			
+//			verticalLevelOrder(node.left,i-1);
+//			verticalLevelOrder(node.right,i+1);
+//			
+//			
+//		}
 		
-		if (node==null)
-			return;
 		
-		queue.add(node);
-		
-		while(!queue.isEmpty()) {
-			
-			Node temp = queue.remove();
-			
-			//TODO do something with the node
-			
-			if (!map.containsKey(i))
-				map.put(i, new ArrayList<Integer>());
-			map.get(i).add(temp.data);
-			
-			verticalLevelOrder(node.left,i-1);
-			verticalLevelOrder(node.right,i+1);
-			
-			
-		}
-		
-		
-	}
+//	}
 
 }
 
